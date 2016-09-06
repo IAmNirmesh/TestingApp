@@ -1,0 +1,167 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.android.docapp.viewModel.PatientInfoViewModel"/>
+    </data>
+
+    <ScrollView
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        tools:context="com.android.docapp.view.fragments.AddPatientInfoFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="16dp">
+
+            <EditText
+                android:id="@+id/frag_add_patient_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/hint_patient_name"
+                android:inputType="textPersonName"
+                app:addTextChangedListener="@{viewModel.patientNameTextWatcher}" />
+
+            <EditText
+                android:id="@+id/frag_add_patient_phone_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:inputType="phone"
+                android:layout_marginTop="8dp"
+                android:hint="@string/hint_patient_phone"
+                app:addTextChangedListener="@{viewModel.patientPhoneTextWatcher}" />
+
+            <EditText
+                android:id="@+id/frag_add_patient_age_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_patient_age"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:maxLength="3"
+                android:inputType="number"
+                app:addTextChangedListener="@{viewModel.patientAgeTextWatcher}" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/does_patient_suffers_from_migraine"
+                android:layout_marginTop="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_migraine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/rb_migraine_no"
+                app:setOnCheckedChangeListener = "@{viewModel.onMigraineChanged}"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_migraine_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_yes" />
+
+                <RadioButton
+                    android:id="@+id/rb_migraine_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_no" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/does_patient_uses_any_hallucinogenic_drugs"
+                android:layout_marginTop="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_hall_drugs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/rb_hallu_no"
+                app:setOnCheckedChangeListener = "@{viewModel.onHallucinoDrugChanged}"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_hallu_yes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_yes"/>
+
+                <RadioButton
+                    android:id="@+id/rb_hallu_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_no" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:layout_marginTop="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:checkedButton="@+id/rb_female"
+                app:setOnCheckedChangeListener = "@{viewModel.onGenderChanged}"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_male" />
+
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/rb_txt_female" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/frag_add_patient_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_txt_add_patient"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="@{viewModel.onAddPatient}" />
+
+            <Button
+                android:id="@+id/frag_view_patient__history_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_txt_view_history"
+                android:textColor="@android:color/white"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:onClick="@{viewModel.onViewPatientHistory}" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
+

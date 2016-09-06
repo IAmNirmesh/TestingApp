@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">DocApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint_patient_name">Patient name</string>
+    <string name="hint_patient_phone">Patient phone</string>
+    <string name="hint_patient_age">Patient age</string>
+    <string name="does_patient_suffers_from_migraine">Does patient suffers from migraine?</string>
+    <string name="does_patient_uses_any_hallucinogenic_drugs">Does patient uses any hallucinogenic drugs?</string>
+    <string name="rb_txt_yes">Yes</string>
+    <string name="rb_txt_no">No</string>
+    <string name="rb_txt_male">Male</string>
+    <string name="rb_txt_female">Female</string>
+    <string name="btn_txt_add_patient">Add Patient</string>
+    <string name="gender">Gender?</string>
+    <string name="error_name_required">Name is required</string>
+    <string name="error_phone_required">Phone number is required</string>
+    <string name="error_correct_phone_required">Correct Phone number is required</string>
+    <string name="error_age_required">Age is required</string>
+    <string name="btn_txt_view_history">View History</string>
+    <string name="patient_history_title">View Patient History</string>
+    <string name="todd_syndrome_msg">%1$s has %2$s probability of Todd\'s syndrome</string>
+    <string name="todd_syndrome_item_txt">Todd\'s syndrome probability is: %s</string>
+    <string name="no_patient_found_msg">No patient found</string>
+</resources>
